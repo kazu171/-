@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Countdown Timer</title>
+  <style>
+    body { font-family: Arial, sans-serif; text-align: center; margin-top: 50px; }
+    #countdown { font-size: 2em; }
+  </style>
+</head>
+<body>
+  <div id="countdown"></div>
+  <script>
+    const targetDate = new Date("2024-08-24").getTime();
+    const countdown = document.getElementById("countdown");
+    const updateCountdown = () => {
+      const now = new Date().getTime();
+      const distance = targetDate - now;
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      countdown.innerText = `${days} days left`;
+    };
+    updateCountdown();
+    setInterval(updateCountdown, 1000 * 60 * 60); // Update every hour
+  </script>
+</body>
+</html>
