@@ -1,20 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>JavaScript Example</title>
-  <!-- JavaScriptファイルを読み込む -->
-  <script src="main.js"></script>
-</head>
-<body>
-  <h1>Hello, JavaScript!</h1>
-</body>
-</html>
-<!DOCTYPE html>
-<html>
-<head>
+  <title>Countdown Timer</title>
   <style>
     body { font-family: Arial, sans-serif; text-align: center; margin-top: 50px; }
     #countdown { font-size: 2em; }
@@ -22,15 +11,18 @@
 </head>
 <body>
   <div id="countdown"></div>
+  
   <script>
     const targetDate = new Date("2024-08-24").getTime();
     const countdown = document.getElementById("countdown");
+    
     const updateCountdown = () => {
       const now = new Date().getTime();
       const distance = targetDate - now;
       const days = Math.floor(distance / (1000 * 60 * 60 * 24));
       countdown.innerText = `${days} days left until 2024-08-24`;
     };
+    
     updateCountdown();
     setInterval(updateCountdown, 1000); // Update every second
   </script>
