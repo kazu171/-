@@ -15,9 +15,10 @@
       const now = new Date().getTime();
       const distance = targetDate - now;
       const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      countdown.innerText = `2024-08-24 days left`;
+      countdown.innerText = `${days} days left until 2024-08-24`;
     };
     updateCountdown();
-    setInterval(updateCountdown, 1000 * 60 * 60); 
+    setInterval(updateCountdown, 1000); // Update every second
   </script>
 </body>
+</html>
