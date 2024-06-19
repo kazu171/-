@@ -10,16 +10,25 @@
 <body>
   <div id="countdown"></div>
   <script>
-    const targetDate = new Date("2024-08-24").getTime();
+    // ターゲット日時の設定
+    const targetDate = new Date("2024-08-24T00:00:00Z").getTime();
     const countdown = document.getElementById("countdown");
+
+    // カウントダウンを更新する関数
     const updateCountdown = () => {
       const now = new Date().getTime();
       const distance = targetDate - now;
+
+      // 日数を計算
       const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+
+      // ページに反映
       countdown.innerText = `${days} days left`;
     };
+
+    // 初回実行と定期的な更新
     updateCountdown();
-    setInterval(updateCountdown, 1000 * 60 * 60); // Update every hour
+    setInterval(updateCountdown, 1000); // 1秒ごとに更新
   </script>
 </body>
 </html>
